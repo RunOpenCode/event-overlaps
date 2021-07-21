@@ -1,0 +1,52 @@
+{
+    "name": "runopencode/event-overlaps",
+    "description": "Provides you with basic logic to check for events overlaping.",
+    "keywords": [
+        "event",
+        "overlap",
+        "validation"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikola Svitlica a.k.a TheCelavi",
+            "email": "thecelavi@gmail.com",
+            "homepage": "http://www.runopencode.com",
+            "role": "Project lead"
+        },
+        {
+            "name": "RunOpenCode members",
+            "email": "support@runopencode.com",
+            "homepage": "http://www.runopencode.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RunOpenCode\\EventOverlaps\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "RunOpenCode\\EventOverlaps\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "scripts": {
+        "phpunit": "tools/phpunit.phar",
+        "composer-require-checker": "tools/composer-require-checker check composer.json --config-file=`pwd`/composer-require-checker.config.dist.json",
+        "composer-unused": "tools/composer-unused --excludeDir=build --excludeDir=tools",
+        "php-cs-fixer": "tools/php-cs-fixer fix --dry-run --diff --verbose --show-progress=dots",
+        "phpstan": "php tools/phpstan analyse --autoload-file=tools/phpunit.phar --memory-limit=1G",
+        "psalm": "tools/psalm --threads=8"
+    }
+}
