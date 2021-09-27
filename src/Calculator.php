@@ -72,6 +72,6 @@ final class Calculator implements CalculatorInterface
      */
     public function count(): int
     {
-        return \count($this->adapter);
+        return $this->adapter->count();
     }
 }
